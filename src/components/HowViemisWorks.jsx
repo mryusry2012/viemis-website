@@ -17,7 +17,7 @@ function HowViemisWorks() {
           </p>
         </div>
 
-        <div className="relative flex flex-col md:flex-row items-center justify-center gap-10 flex-wrap">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 flex-wrap">
           {/* Left Cards */}
           <div className="flex flex-col gap-6">
             <div className={cardStyle} data-aos="fade-up" data-aos-delay="100">

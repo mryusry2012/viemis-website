@@ -87,11 +87,13 @@ export default function PricingSection() {
         <div className="mb-16 sm:mb-20 flex justify-center">
           <div className="flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-3xl text-lg font-semibold shadow-lg animate-pulse max-w-xs sm:max-w-md md:max-w-lg w-full">
             <Clock size={28} className="text-white" />
-            <span className="flex-1 text-center">Tawaran Promosi Tamat Dalam: <span className="font-extrabold">{countdown}</span></span>
+            <span className="flex-1 text-center">
+              Tawaran Promosi Tamat Dalam: <span className="font-extrabold">{countdown}</span>
+            </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-12 lg:gap-16 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mt-10">
           {pricingPlans.map((plan) => (
             <div
               key={plan.id}
@@ -118,8 +120,8 @@ export default function PricingSection() {
               <hr className="border-t border-gray-200 my-4" />
 
               <ul className="space-y-4 text-left mb-6">
-                {plan.features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3 text-gray-700 font-medium">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-gray-700 font-medium">
                     {feature.icon}
                     <span>{feature.text}</span>
                   </li>
@@ -134,5 +136,5 @@ export default function PricingSection() {
         </div>
       </div>
     </section>
-  );
+);
 }

@@ -1,36 +1,39 @@
-import { useEffect, useState, useMemo } from "react"
-import AOS from "aos"
-import "aos/dist/aos.css"
-import { ShoppingBag, MessageCircle } from "lucide-react"
+import { useEffect, useState, useMemo } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { ShoppingBag, MessageCircle } from "lucide-react";
 
 function Hero() {
   useEffect(() => {
-    AOS.init({ duration: 1200, once: true })
-  }, [])
+    AOS.init({ duration: 1200, once: true });
+  }, []);
 
-  const symptoms = useMemo(() => [
-    <span className="text-orange-600 font-semibold">Kerap bersin setiap pagi?</span>,
-    <span className="text-orange-600 font-semibold">Hidung mudah tersumbat?</span>,
-    <span className="text-orange-600 font-semibold">Gatal hidung berpanjangan?</span>
-  ], [])
+  const symptoms = useMemo(
+    () => [
+      <span className="text-orange-600 font-semibold">Kerap bersin setiap pagi?</span>,
+      <span className="text-orange-600 font-semibold">Hidung mudah tersumbat?</span>,
+      <span className="text-orange-600 font-semibold">Gatal hidung berpanjangan?</span>,
+    ],
+    []
+  );
 
-  const [currentSymptom, setCurrentSymptom] = useState(0)
-  const [showHighlight, setShowHighlight] = useState(false)
+  const [currentSymptom, setCurrentSymptom] = useState(0);
+  const [showHighlight, setShowHighlight] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSymptom((prev) => (prev + 1) % symptoms.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [symptoms])
+      setCurrentSymptom((prev) => (prev + 1) % symptoms.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [symptoms]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowHighlight(true), 2400)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setShowHighlight(true), 2400);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <section className="bg-[#fef3c7] min-h-screen flex items-center justify-center px-6 sm:px-8 py-16 md:py-28 overflow-hidden">
+    <section className="bg-[#fef3c7] min-h-screen flex items-center justify-center px-6 sm:px-8 py-16 md:py-28">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Kiri: Teks */}
         <div data-aos="fade-up" data-aos-duration="1000" className="text-center md:text-left space-y-6">
@@ -41,7 +44,9 @@ function Hero() {
             <span className="relative inline-block">
               <span className="font-semibold text-neutral-900 relative z-10">masalah resdung</span>
               <span
-                className={`absolute left-0 bottom-[0.4em] sm:bottom-[0.12em] md:bottom-[0.15em] h-[0.75em] sm:h-[0.6em] md:h-[0.65em] bg-orange-400 rounded-sm z-0 transition-all duration-1000 ease-in-out ${showHighlight ? 'w-full' : 'w-0'}`}
+                className={`absolute left-0 bottom-[0.4em] sm:bottom-[0.12em] md:bottom-[0.15em] h-[0.75em] sm:h-[0.6em] md:h-[0.65em] bg-orange-400 rounded-sm z-0 transition-all duration-1000 ease-in-out ${
+                  showHighlight ? "w-full" : "w-0"
+                }`}
                 style={{ transitionDelay: "2.4s", transformOrigin: "left" }}
               ></span>
             </span>
@@ -66,11 +71,7 @@ function Hero() {
         </div>
 
         {/* Kanan: Gambar Produk */}
-        <div
-          data-aos="fade-down"
-          data-aos-duration="1000"
-          className="flex justify-center"
-        >
+        <div data-aos="fade-down" data-aos-duration="1000" className="flex justify-center">
           <img
             src="/images/viemis-box-only-small3.png"
             alt="Kotak Spray Viemis"
@@ -81,7 +82,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

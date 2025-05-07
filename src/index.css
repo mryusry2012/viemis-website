@@ -1,4 +1,4 @@
-/* ✅ Import Font Dulu */
+/* ✅ Import Font - Use Link in HTML for Better Performance */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap');
 
 /* ✅ Tailwind Directives */
@@ -8,6 +8,7 @@
 
 /* ✅ Custom Styles */
 @layer components {
+  /* === Buttons === */
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-orange-500 text-white text-base font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300;
   }
@@ -16,10 +17,12 @@
     @apply inline-flex items-center gap-2 border border-orange-500 text-orange-600 text-base font-medium py-3 px-6 rounded-lg hover:bg-orange-50 transition duration-300;
   }
 
+  /* === Section Spacing === */
   .section-padding {
     @apply px-6 sm:px-10 md:px-20 py-16 md:py-24;
   }
 
+  /* === Section Titles and Text === */
   .section-title {
     @apply text-2xl sm:text-3xl md:text-4xl font-bold text-orange-600 mb-2;
   }
@@ -32,8 +35,9 @@
     @apply text-gray-700 text-base md:text-lg leading-relaxed;
   }
 
+  /* === Card Styles === */
   .card-hover {
-    @apply border-l-4 border-orange-400 bg-transparent backdrop-blur-md rounded-xl shadow-md hover:shadow-lg transition hover:-translate-y-1 hover:bg-white/60 duration-300;
+    @apply group border-l-4 border-orange-400 bg-transparent backdrop-blur-md rounded-xl shadow-md hover:shadow-lg transition hover:-translate-y-1 hover:bg-white/60 duration-300;
   }
 
   .card-icon {
@@ -41,10 +45,10 @@
   }
 
   .card-text {
-    @apply text-sm md:text-base text-orange-800 leading-relaxed font-semibold group-hover:font-bold text-justify min-h-[96px];
+    @apply text-sm md:text-base text-orange-800 leading-relaxed font-semibold text-justify min-h-[96px] group-hover:font-bold;
   }
 
-  /* === Section Background Alternating === */
+  /* === Section Backgrounds === */
   .bg-section-1 {
     @apply bg-[#fef3c7];
   }
@@ -60,6 +64,7 @@ body {
   @apply text-gray-800 antialiased;
 }
 
+/* ✅ Headings Styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
 }

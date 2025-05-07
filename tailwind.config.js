@@ -19,6 +19,9 @@ export default {
         sans: ['Inter', 'sans-serif'],
         heading: ['Poppins', 'sans-serif'],
       },
+      backgroundImage: {
+        // Removed pattern.svg reference
+      },
     },
   },
   plugins: [],

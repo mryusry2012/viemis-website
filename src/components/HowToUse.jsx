@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { SprayCan, Hand, Wind } from "lucide-react";
-import { motion } from "framer-motion";
 
 function HowToUseSection() {
   const steps = [
@@ -18,7 +17,7 @@ function HowToUseSection() {
     },
     {
       number: "Langkah 3",
-      title: "Sedut aromaViemis untuk kelegaan",
+      title: "Sedut aroma Viemis untuk kelegaan",
       icon: <Wind className="text-orange-600 w-16 h-16 mb-4" />, 
       description: "Tarik nafas dalam-dalam untuk menikmati aroma segar Viemis."
     }
@@ -57,17 +56,15 @@ function HowToUseSection() {
         <h2 className="text-5xl font-extrabold text-orange-700 mb-16 tracking-wide drop-shadow-lg">Cara Guna Viemis</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
           {steps.map((step, index) => (
-            <motion.div
+            <div
               key={index}
               className="flex flex-col items-center bg-white rounded-3xl shadow-2xl p-8 text-center relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl min-h-[380px] w-full max-w-[350px] mx-auto"
-              whileHover={{ rotateY: 10, scale: 1.08 }}
-              transition={{ duration: 0.5 }}
             >
               <div className="bg-orange-600 text-white py-2 px-8 rounded-full text-sm font-bold mb-6 tracking-widest shadow-lg w-fit text-center">{step.number}</div>
               {step.icon}
               <h3 className="text-2xl font-semibold text-orange-700 mb-4 drop-shadow-md">{step.title}</h3>
               <p className="text-gray-600 text-base leading-relaxed px-4">{step.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
         {/* Call to Action Button */}
