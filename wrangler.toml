@@ -1,0 +1,8 @@
+name = "viemis-fullstack"
+compatibility_date = "2025-05-07"
+account_id = "<YOUR_ACCOUNT_ID>"
+workers_dev = true
+main = "src/worker.js"
+
+[site]
+bucket = "./dist"
