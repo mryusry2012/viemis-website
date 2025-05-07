@@ -1,3 +1,10 @@
+/* Reset Global Margin & Padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fef3c7; /* Ensure body matches Hero background */
+}
+
 /* ✅ Import Font - Use Link in HTML for Better Performance */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap');
 
